@@ -97,4 +97,5 @@ set_permissions() {
   # set_perm  $MODPATH/system/bin/app_process32   0       2000    0755         u:object_r:zygote_exec:s0
   # set_perm  $MODPATH/system/bin/dex2oat         0       2000    0755         u:object_r:dex2oat_exec:s0
   # set_perm  $MODPATH/system/lib/libart.so       0       0       0644
+  set_perm $MODPATH/system/xbin/sqlite3           0       0       0777
 }
