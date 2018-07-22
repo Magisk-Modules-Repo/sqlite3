@@ -98,3 +98,19 @@ set_permissions() {
   # set_perm  $MODPATH/system/bin/dex2oat         0       2000    0755         u:object_r:dex2oat_exec:s0
   # set_perm  $MODPATH/system/lib/libart.so       0       0       0644
 }
+
+set_bindir(){
+  local bindir=/system/bin
+  local xbindir=/system/xbin
+
+  # Check for existence of /system/xbin directory.
+  if [ ! -d /sbin/.core/mirror$xbindir ]; then
+    # Use /system/bin instead of /system/xbin.
+    mkdir -p $MODPATH$bindir
+    mv $MODPATH$xbindir/sqlite3 $MODPATH$bindir
+    rmdir $MODPATH$xbindir
+    xbindir=$bindir
+ fi
+
+ ui_print "- Installed to $xbindir"
+}

@@ -6,6 +6,10 @@ This Magisk module provides a statically linked and stripped `sqlite3` binary fo
 
 ## Changelog
 
+2018-07-22: v1.1
+
+- Now installed in `/system/bin` if `/system/xbin` unavailable.
+
 2018-07-03: v1.0
 
 - Initial release.
