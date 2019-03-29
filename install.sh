@@ -154,12 +154,12 @@ set_permissions() {
 }
 
 # You can add more functions to assist your custom script code
-set_bindir(){
+set_bindir() {
   local bindir=/system/bin
   local xbindir=/system/xbin
 
   # Check for existence of /system/xbin directory.
-  if [ ! -d /sbin/.core/mirror$xbindir ]; then
+  if [ ! -d /sbin/.magisk/mirror$xbindir ]; then
     # Use /system/bin instead of /system/xbin.
     mkdir -p $MODPATH$bindir
     mv $MODPATH$xbindir/sqlite3 $MODPATH$bindir
